@@ -1,96 +1,58 @@
-/* Skills.css */
+// Skills.jsx
+// Shows skills grouped by category: Languages, Frameworks, Technical Interests
+// Uses SkillTag component for each item
 
-.skills {
-  border-top: 1px solid var(--border);
+import { skills } from "../../data/portfolioData";
+import SkillTag from "./SkillTag";
+import "./Skills.css";
+
+// Each group: label shown to user, data array, category string for styling
+const skillGroups = [
+  { title: "Languages",            data: skills.languages,  category: "language"   },
+  { title: "Frameworks",           data: skills.frameworks, category: "framework"  },
+  { title: "Technical Interests",  data: skills.interests,  category: "interest"   },
+];
+
+function Skills() {
+  return (
+    <section id="skills" className="skills">
+      <p className="section-label">03. skills</p>
+      <h2 className="section-title">
+        Technical <span>Arsenal</span>
+      </h2>
+      <div className="section-divider" />
+
+      <div className="skills__groups">
+        {skillGroups.map((group) => (
+          // Only render group if it has items
+          group.data.length > 0 && (
+            <div key={group.title} className="skills__group card">
+              {/* Group header */}
+              <h3 className="skills__group-title">
+                <span className="skills__group-prefix">{"// "}</span>
+                {group.title}
+              </h3>
+
+              {/* Tags */}
+              <div className="skills__tags">
+                {group.data.map((skill, i) => (
+                  <SkillTag key={i} label={skill} category={group.category} />
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+
+      {/* Note about tools */}
+      {skills.tools.length === 0 && (
+        <p className="skills__note">
+          <span>{"// "}</span>
+          Tools section will be updated as the stack grows.
+        </p>
+      )}
+    </section>
+  );
 }
 
-.skills__groups {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ---- Skill group card ---- */
-.skills__group {
-  padding: 24px 28px;
-}
-
-.skills__group-title {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
-}
-
-.skills__group-prefix {
-  color: var(--text-muted);
-}
-
-.skills__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* ---- Base tag ---- */
-.skill-tag {
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-family: var(--font-mono);
-  border: 1px solid transparent;
-  cursor: default;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  display: inline-block;
-}
-
-.skill-tag:hover {
-  transform: translateY(-2px);
-}
-
-/* Language — blue accent (primary) */
-.skill-tag--language {
-  background: rgba(59, 130, 246, 0.12);
-  border-color: rgba(59, 130, 246, 0.35);
-  color: #93c5fd;
-}
-
-.skill-tag--language:hover {
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
-}
-
-/* Framework — cyan tint */
-.skill-tag--framework {
-  background: rgba(34, 211, 238, 0.08);
-  border-color: rgba(34, 211, 238, 0.3);
-  color: #67e8f9;
-}
-
-.skill-tag--framework:hover {
-  box-shadow: 0 4px 14px rgba(34, 211, 238, 0.15);
-}
-
-/* Interest — subtle slate */
-.skill-tag--interest {
-  background: rgba(148, 163, 184, 0.07);
-  border-color: rgba(148, 163, 184, 0.2);
-  color: var(--text-secondary);
-}
-
-.skill-tag--interest:hover {
-  border-color: rgba(148, 163, 184, 0.4);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* ---- Note below skills ---- */
-.skills__note {
-  margin-top: 20px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-.skills__note span {
-  color: var(--accent);
-}
+export default Skills;
