@@ -37,3 +37,28 @@ function App() {
   };
 
   return (
+    <div className="app-layout">
+      <Sidebar
+        activeSection={activeSection}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        onNavClick={handleNavClick}
+      />
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+      <main className="main-content">
+        <Hero />
+        <About />
+        <Education />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
+      <ScrollToTop />
+    </div>
+  );
+}
+
+export default App;
