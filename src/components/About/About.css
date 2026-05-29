@@ -1,0 +1,138 @@
+/* About.css */
+
+.about {
+  border-top: 1px solid var(--border);
+}
+
+/* Two-column layout */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 36px;
+  align-items: start;
+}
+
+/* ---- Left: Bio ---- */
+.about__bio {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+
+/* Objective box — styled like a terminal block */
+.about__objective-box {
+  background: var(--accent-dim);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+}
+
+.about__objective-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.about__objective-label span {
+  color: var(--accent);
+}
+
+.about__objective {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ---- Right sidebar cards ---- */
+.about__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Quick Info Card — styling comes from .card in global.css */
+.about__facts-title {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.about__facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about__facts-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fact-key {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.fact-val {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.about__email-link {
+  color: var(--accent-light);
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+.about__email-link:hover {
+  text-decoration: underline;
+}
+
+/* Hobbies */
+.about__hobbies-title {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.about__hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hobby-tag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.hobby-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* ---- Mobile: stack columns ---- */
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}
