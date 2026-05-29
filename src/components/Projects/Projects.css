@@ -1,0 +1,128 @@
+/* Projects.css */
+
+.projects {
+  border-top: 1px solid var(--border);
+}
+
+/* ---- Project Grid ---- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ---- Project Card ---- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+.project-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card__icon {
+  color: var(--accent);
+}
+
+.project-card__links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-card__links a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.project-card__links a:hover {
+  color: var(--accent-light);
+}
+
+.project-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.project-card__tech {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-light);
+  background: var(--accent-dim);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* ---- Empty State ---- */
+.projects__empty {
+  background: var(--card-bg);
+  border: 1px dashed rgba(59, 130, 246, 0.25);
+  border-radius: 12px;
+  padding: 56px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.projects__empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.projects__empty-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.projects__empty-text {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.projects__empty-link {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.projects__empty-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.projects__empty-note span {
+  color: var(--accent);
+}
+
+.projects__empty-note code {
+  background: var(--accent-dim);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--accent-light);
+}
