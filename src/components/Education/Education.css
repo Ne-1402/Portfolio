@@ -1,0 +1,87 @@
+/* Education.css */
+
+.education {
+  border-top: 1px solid var(--border);
+}
+
+.education__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Education Card ---- */
+.edu-card {
+  position: relative;
+  padding: 28px 32px;
+}
+
+.edu-card__badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent-light);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.edu-card__institution {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  padding-right: 90px; /* avoid overlap with badge */
+}
+
+.edu-card__degree {
+  font-size: 0.92rem;
+  color: var(--accent-light);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.edu-card__meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.edu-card__year,
+.edu-card__location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.edu-card__score {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.edu-card__score-label {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.edu-card__score-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
