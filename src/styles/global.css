@@ -1,0 +1,131 @@
+/* =========================================
+   GLOBAL STYLES — Arnesh CV Site
+   Theme: Dark / Black + Blue (Terminal Blueprint)
+   ========================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Backgrounds */
+  --bg:           #060810;
+  --bg-secondary: #0a0e1c;
+  --card-bg:      #0d1628;
+  --sidebar-bg:   #070919;
+
+  /* Accent — Electric Blue */
+  --accent:        #3b82f6;
+  --accent-light:  #60a5fa;
+  --accent-glow:   rgba(59, 130, 246, 0.22);
+  --accent-dim:    rgba(59, 130, 246, 0.08);
+
+  /* Text */
+  --text-primary:   #dde4f0;
+  --text-secondary: #8b97ac;
+  --text-muted:     #4a5568;
+
+  /* Borders */
+  --border:       rgba(59, 130, 246, 0.14);
+  --border-hover: rgba(59, 130, 246, 0.45);
+
+  /* Layout */
+  --sidebar-width: 250px;
+  --content-max:   860px;
+
+  /* Typography */
+  --font-display: 'Courier New', Courier, monospace;
+  --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Courier New', Courier, monospace;
+}
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* --- Section Layout --- */
+section {
+  padding: 80px 56px;
+  max-width: var(--content-max);
+}
+
+/* --- Shared Section Header --- */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.section-divider {
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+  margin-bottom: 44px;
+}
+
+/* --- Shared Card --- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 24px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
